@@ -6,10 +6,11 @@
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="id" id="<%= task.id %>">
           <label class="form-check-label" for="<%= task.id %>">
-            <%= link_to task.title, task_details_path(task) %>
+            <%= link_to task.title, task_show_path(task) %>
           </label>
         </div>
       </li>
     <% end %>
   </ul>
+  <%= link_to "Add a new task", new_task_path, class: "btn btn-primary" %>
 </div>
