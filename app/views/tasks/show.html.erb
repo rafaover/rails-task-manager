@@ -7,7 +7,7 @@
       <br>
       <%= link_to "Edit Task", edit_task_path(@task), class: "btn btn-primary mt-3" %>
       <%= link_to "Back to List", tasks_path, class: "btn btn-secondary mt-3" %>
-      <%= link_to "Delete", task_show_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-3" %>
+      <%= link_to "Delete", tasks_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger mt-3" %>
     </div>
   </div>
 </div>
