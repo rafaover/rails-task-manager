@@ -16,9 +16,12 @@ class TasksTest < ApplicationSystemTestCase
     assert page.has_content?(Task.first.title)
   end
 
-  test "clicking Edit Task open Edit Page of the task" do
-    visit tasks_show_url(Task.first.id)
-    click_on "Edit Task", match: :first
-    assert page.has_content?("EDIT TASK")
+  test "clicking (Edit Task) open Edit page and shows content" do
+    task = Task.first
+    visit task_show_url(task.id)
+    click_on "Edit Task"
+    assert_current_path(edit_task_path(task.id))
+    assert_selector "h1", text: "EDIT TASK"
+    assert_field "task[title]", with: task.title
   end
 end
