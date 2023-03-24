@@ -1,6 +1,6 @@
 <h1> NEW TASK </h1>
 
-<%= form_with model: @task do |task| %>
+<%= form_with model: @task, url: create_task_path, method: :post do |task| %>
   <%= task.label :title %>
   <%= task.text_field :title %>
   <%= task.label :details %>
