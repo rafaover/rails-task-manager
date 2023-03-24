@@ -4,8 +4,12 @@
     <% @tasks.each do |task| %>
       <li class="list-group-item py-3">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="id" id="<%= task.id %>">
-          <label class="form-check-label" for="<%= task.id %>">
+          <% if task.completed %>
+            <%= check_box_tag "task_#{task.id}", true, true, class: "form-check-input" %>
+          <% else %>
+            <%= check_box_tag "task_#{task.id}", false, false, class: "form-check-input" %>
+          <% end %>
+          <label class="form-check-label" for="task_<%= task.id %>">
             <%= link_to task.title, task_show_path(task) %>
           </label>
         </div>
