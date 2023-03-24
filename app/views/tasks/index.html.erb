@@ -5,9 +5,9 @@
       <li class="list-group-item py-3">
         <div class="form-check">
           <% if task.completed %>
-            <%= check_box_tag "task_#{task.id}", true, true, class: "form-check-input" %>
+            <i class="fa-solid fa-circle-check"></i>
           <% else %>
-            <%= check_box_tag "task_#{task.id}", false, false, class: "form-check-input" %>
+            <i class="fa-regular fa-circle"></i>
           <% end %>
           <label class="form-check-label" for="task_<%= task.id %>">
             <%= link_to task.title, task_show_path(task) %>
