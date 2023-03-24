@@ -12,7 +12,13 @@ class TasksTest < ApplicationSystemTestCase
   end
 
   test "visiting /tasks/:id and rendering task details" do
-    visit task_details_url(Task.first.id)
+    visit task_show_url(Task.first.id)
     assert page.has_content?(Task.first.title)
+  end
+
+  test "clicking Edit Task open Edit Page of the task" do
+    visit tasks_show_url(Task.first.id)
+    click_on "Edit Task", match: :first
+    assert page.has_content?("EDIT TASK")
   end
 end
