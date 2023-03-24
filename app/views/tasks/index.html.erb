@@ -10,7 +10,7 @@
             <i class="fa-regular fa-circle"></i>
           <% end %>
           <label class="form-check-label" for="task_<%= task.id %>">
-            <%= link_to task.title, task_show_path(task) %>
+            <%= link_to task.title, task_path(task) %>
           </label>
         </div>
       </li>
