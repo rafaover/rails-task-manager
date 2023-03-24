@@ -1,6 +1,6 @@
 <div class="container">
   <h1>EDIT TASK</h1>
-  <%= form_with model: @task, url: update_task_path(@task), method: :patch do |task| %>
+  <%= form_with model: @task, url: task_path(@task), method: :patch do |task| %>
     <div class="form-group">
       <%= task.label :title %>
       <%= task.text_field :title, class: "form-control" %>
