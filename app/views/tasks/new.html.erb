@@ -1,6 +1,6 @@
 <div class="container">
   <h1>New Task</h1>
-  <%= form_with model: @task, url: tasks_path, method: :post, class: "form" do |task| %>
+  <%= form_with model: @task, url: tasks_path(@task), method: :post, class: "form" do |task| %>
     <div class="form-group">
       <%= task.label :title, class: "font-weight-bold" %>
       <%= task.text_field :title, class: "form-control" %>
